@@ -1,0 +1,44 @@
+[
+    {
+      "name": "Batting",
+      "description": "Learn the art of batting and improve your skills in various batting techniques and strategies.",
+      "image": "path/to/batting-image.jpg",
+      "rating": 4.5,
+      "totalStudents": 120
+    },
+    {
+      "name": "Bowling",
+      "description": "Master the art of bowling and develop your bowling techniques, variations, and control.",
+      "image": "path/to/bowling-image.jpg",
+      "rating": 4.2,
+      "totalStudents": 90
+    },
+    {
+      "name": "Fielding",
+      "description": "Enhance your fielding skills, including catching, throwing, and agility in the field.",
+      "image": "path/to/fielding-image.jpg",
+      "rating": 4.7,
+      "totalStudents": 80
+    },
+    {
+      "name": "Fitness and Conditioning",
+      "description": "Focus on improving fitness levels and overall conditioning to excel in cricket.",
+      "image": "path/to/fitness-image.jpg",
+      "rating": 4,
+      "totalStudents": 150
+    },
+    {
+      "name": "Tactical Awareness",
+      "description": "Develop a strong understanding of cricket tactics, match awareness, and game strategies.",
+      "image": "path/to/tactical-image.jpg",
+      "rating": 4.8,
+      "totalStudents": 100
+    },
+    {
+      "name": "Match Practice",
+      "description": "Engage in match scenarios and practice sessions to apply your skills in real-game situations.",
+      "image": "path/to/match-practice-image.jpg",
+      "rating": 4.3,
+      "totalStudents": 110
+    }
+  ]

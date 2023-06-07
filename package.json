@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@lottiefiles/react-lottie-player": "^3.5.3",
+    "@tanstack/react-query": "^4.29.12",
     "aos": "^2.3.4",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",

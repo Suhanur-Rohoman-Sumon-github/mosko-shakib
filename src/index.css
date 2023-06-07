@@ -14,6 +14,9 @@
 .text-secondary{
   @apply text-teal-500 font-light text-2xl my-4
 }
+.card-background{
+  @apply bg-gradient-to-r h-screen w-full from-pink-400 via-purple-500 to-blue-500  md:flex items-center bg-opacity-20 shadow-xl shadow-white pb-8 rounded-xl
+}
 
 
 

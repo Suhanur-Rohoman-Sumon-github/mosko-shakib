@@ -19,10 +19,10 @@ const Banner = () => {
                 }}
                 navigation={false}
                 modules={[Autoplay, Pagination, Navigation]}
-                className="mySwiper"
+                className="mySwiper card-background"
             >
-                <SwiperSlide>
-                    <div className="hero min-h-screen md:flex" >
+                <SwiperSlide className=" ">
+                    <div className="hero min-h-screen" >
                         <div></div>
                         <div className="hero-content">
                             <div className="">
@@ -33,8 +33,8 @@ const Banner = () => {
                         </div>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide>
-                    <div className="hero min-h-screen" >
+                <SwiperSlide className=" ">
+                    <div className="hero min-h-screen " >
                         <div className=" "></div>
                         <div className="hero-content ">
                             <div className="">
@@ -45,7 +45,7 @@ const Banner = () => {
                         </div>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide className=" ">
                     <div className="hero min-h-screen">
                         <div className=" "></div>
                         <div className="hero-content  ">
@@ -57,7 +57,7 @@ const Banner = () => {
                         </div>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide className=" ">
                     <div className="hero min-h-screen" >
                         <div className=" "></div>
                         <div className="hero-content  ">

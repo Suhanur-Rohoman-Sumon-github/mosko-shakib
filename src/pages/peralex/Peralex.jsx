@@ -6,7 +6,7 @@ const Peralex = () => {
     return (
            <div className="my-28">
             <Title title='about our bussness' subTitle='about us'></Title>
-             <div className="bg-gradient-to-r h-screen w-full from-pink-400 via-purple-500 to-blue-500  md:flex items-center bg-opacity-20 shadow-xl shadow-white pb-8 rounded-xl">
+             <div className="card-background">
                 <div className="md:w-10%">
                     <Player
                         autoplay

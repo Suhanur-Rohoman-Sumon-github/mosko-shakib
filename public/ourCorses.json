@@ -1,44 +1,73 @@
 [
+  
     {
       "name": "Batting",
       "description": "Learn the art of batting and improve your skills in various batting techniques and strategies.",
-      "image": "path/to/batting-image.jpg",
+      "image": "https://www.shutterstock.com/image-vector/illustration-batsman-playing-cricket-action-abstract-2037066341",
       "rating": 4.5,
-      "totalStudents": 120
+      "totalStudents": 120,
+      "popular": true
+      
     },
     {
       "name": "Bowling",
       "description": "Master the art of bowling and develop your bowling techniques, variations, and control.",
-      "image": "path/to/bowling-image.jpg",
+      "image": "https://www.shutterstock.com/image-photo/cricket-fast-bowler-going-ball-366350231",
       "rating": 4.2,
-      "totalStudents": 90
+      "totalStudents": 90,
+      "popular": true
     },
     {
       "name": "Fielding",
       "description": "Enhance your fielding skills, including catching, throwing, and agility in the field.",
-      "image": "path/to/fielding-image.jpg",
+      "image": "https://www.shutterstock.com/image-vector/concept-sportsman-playing-cricket-match-sport-764984512",
       "rating": 4.7,
-      "totalStudents": 80
+      "totalStudents": 80,
+      "popular": true
     },
     {
       "name": "Fitness and Conditioning",
       "description": "Focus on improving fitness levels and overall conditioning to excel in cricket.",
-      "image": "path/to/fitness-image.jpg",
+      "image": "https://www.shutterstock.com/image-photo/fit-young-asian-man-working-out-2132282797",
       "rating": 4,
-      "totalStudents": 150
+      "totalStudents": 150,
+      "popular": true
     },
     {
       "name": "Tactical Awareness",
       "description": "Develop a strong understanding of cricket tactics, match awareness, and game strategies.",
-      "image": "path/to/tactical-image.jpg",
+      "image": "https://www.shutterstock.com/image-photo/strategy-word-light-bulb-icon-graphic-603690986",
       "rating": 4.8,
-      "totalStudents": 100
+      "totalStudents": 100,
+      "popular": true
     },
     {
       "name": "Match Practice",
       "description": "Engage in match scenarios and practice sessions to apply your skills in real-game situations.",
-      "image": "path/to/match-practice-image.jpg",
+      "image": "https://www.shutterstock.com/image-photo/cricketer-playing-cricket-on-pitch-white-2115279641",
       "rating": 4.3,
-      "totalStudents": 110
+      "totalStudents": 110,
+      "popular": true
+    },
+    {
+      "name": "Wicketkeeping",
+      "description": "Learn the specialized skills and techniques required for wicketkeeping, including catching, stumping, and maintaining focus behind the stumps.",
+      "image": "https://www.shutterstock.com/image-photo/portrait-wicketkeeper-crouching-behind-stumps-on-647525362",
+      "rating": 4.4,
+      "totalStudents": 95
+    },
+    {
+      "name": "Spin Bowling",
+      "description": "Explore the art of spin bowling and master various spin techniques, such as off-spin, leg-spin, and variations like googly and top-spin.",
+      "image": "https://www.shutterstock.com/image-photo/how-grip-off-spin-bowling-cricket-1211143837",
+      "rating": 4.6,
+      "totalStudents": 85
+    },
+    {
+      "name": "Fast Bowling",
+      "description": "Learn the techniques and strategies of fast bowling, including speed, accuracy, swing, and seam movement.",
+      "image": "https://www.shutterstock.com/image-photo/mumbai-india-january-14-2017-boy-564608785",
+      "rating": 4.5,
+      "totalStudents": 105
     }
   ]

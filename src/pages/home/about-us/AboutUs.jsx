@@ -6,7 +6,7 @@ const AboutUs = () => {
     <UseAOSInit />
     return (
         
-            <div  data-aos="fade-up" className="md:grid grid-cols-4 mt-11 gap-8 w-8/12  p-10 mx-auto shadow-2xl shadow-white hover:shadow-green-500 bg-opacity-30 hover:bg-gradient-to-br from-pink-500 to-green-500 animate-gradient text-white  transition duration-300">
+            <div  data-aos="fade-up"  className="md:grid grid-cols-4 mt-11 gap-8 w-8/12  p-10 mx-auto shadow-2xl shadow-white hover:shadow-green-500 bg-opacity-30 hover:bg-gradient-to-br from-pink-500 to-green-500 animate-gradient text-white  transition duration-300">
                 <div >
                     <h1 className="py-8 px-2 bg-gradient-to-r shadow-2xl from-blue-500 via-purple-500 to-pink-500 text-primary text-4xl font-bold rounded-full text-center ">20k+ </h1>
                     <p className="text-center text-2xl text-secondary mt-4">privious student</p>

@@ -11,8 +11,14 @@
 .text-primary{
   @apply text-yellow-500 font-bold text-4xl my-4 
 }
+.card-text-primary{
+  @apply text-yellow-500 font-bold text-2xl 
+}
+.card-text-secondary{
+  @apply text-teal-500  text-xl 
+}
 .text-secondary{
-  @apply text-teal-500 font-light text-2xl my-4
+  @apply text-teal-500  text-2xl my-4 
 }
 .card-background{
   @apply bg-gradient-to-r  from-pink-400 via-purple-500 to-blue-500   bg-opacity-20 shadow-xl shadow-white pb-8 rounded-xl
@@ -21,7 +27,7 @@
   @apply bg-gradient-to-r from-pink-400 via-purple-500 to-blue-500  pb-4 shadow-xl shadow-white  rounded-xl
 }
 .footer-text{
-  @apply text-teal-500 font-light 
+  @apply text-teal-500 
 }
 
 

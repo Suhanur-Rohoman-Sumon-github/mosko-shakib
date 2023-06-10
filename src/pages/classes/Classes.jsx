@@ -1,6 +1,9 @@
 
 import { Controls, Player } from "@lottiefiles/react-lottie-player";
+import useClasses from "../../hook/useClasses";
+import MapData from "../../componnet/map-data/MapData";
 const Classes = () => {
+    const classes = useClasses()
     return (
         <div>
             <section className=" pt-20 h-screen">
@@ -32,6 +35,9 @@ const Classes = () => {
                         </Player>
                     </div>
                 </div>
+            </section>
+            <section className="card-background py-8 my-8">
+                <MapData items={classes}></MapData>
             </section>
         </div>
     );

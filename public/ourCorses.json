@@ -8,7 +8,7 @@
       "totalStudents": 120,
       "popular": true,
       "Instructor":"tamim iqbal",
-      "Available seats":5,
+      "seats":5,
       "Price":600
       
     },
@@ -20,7 +20,7 @@
       "totalStudents": 90,
       "popular": true,
       "Instructor":"masrafi bin murtaza",
-      "Available seats":15,
+      "seats":15,
       "Price":500
     },
     {
@@ -31,7 +31,7 @@
       "totalStudents": 80,
       "popular": true,
       "Instructor":"nasir hossain",
-      "Available seats":23,
+      "seats":23,
       "Price":250
     },
     {
@@ -42,7 +42,7 @@
       "totalStudents": 150,
       "popular": true,
       "Instructor":"Richard stoienar",
-      "Available seats":14,
+      "seats":14,
       "Price":200
     },
     {
@@ -53,7 +53,7 @@
       "totalStudents": 100,
       "popular": true,
       "Instructor":"Shakib Al Hasan",
-      "Available seats":13,
+      "seats":13,
       "Price":600
     },
     {
@@ -64,7 +64,7 @@
       "totalStudents": 110,
       "popular": true,
       "Instructor":"shane watson",
-      "Available seats":16,
+      "seats":16,
       "Price":100
     },
     {
@@ -74,7 +74,7 @@
       "rating": 4.4,
       "totalStudents": 95,
       "Instructor":"mushfiqur rahim",
-      "Available seats":30,
+      "seats":30,
       "Price":230
     },
     {
@@ -84,7 +84,7 @@
       "rating": 4.6,
       "totalStudents": 85,
       "Instructor":"mehedi hasan miraz",
-      "Available seats":24,
+      "seats":24,
       "Price":250
     },
     {
@@ -94,7 +94,7 @@
       "rating": 4.5,
       "totalStudents": 105,
       "Instructor":"taskin ahammed",
-      "Available seats":10,
+      "seats":10,
       "Price":300
     }
   ]

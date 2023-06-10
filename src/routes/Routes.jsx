@@ -5,6 +5,7 @@ import Login from "../pages/login-and-sinups/login/Login";
 import Sinup from "../pages/login-and-sinups/sinup/Sinup";
 import Instractors from "../pages/instractors/Instractors";
 import Classes from "../pages/classes/Classes";
+import Dashboard from "../layout/Dashboard";
 
 const router = createBrowserRouter([
 {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
         {
             path:'/classes',
             element:<Classes />
+        },
+        {
+            path:'/dashbord',
+            element:<Dashboard />
         }
     ]
 }

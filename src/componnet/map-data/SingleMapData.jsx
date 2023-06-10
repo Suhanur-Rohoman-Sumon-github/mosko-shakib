@@ -3,7 +3,7 @@ import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 
 const SingleMapData = ({ item }) => {
-    const { name, description, image, rating, totalStudents } = item
+    const { name, description, image, rating, Price, seats } = item
     return (
         <div className="card card-compact w-full shadow-white border border-white shadow-xl hover:shadow-green-500 bg-opacity-30 hover:bg-gradient-to-br from-pink-500 to-green-500 animate-gradient  transition duration-300">
             <figure><img src={image} className='h-64 w-full' alt="Shoes" /></figure>
@@ -15,7 +15,11 @@ const SingleMapData = ({ item }) => {
                     value={rating}
                     readOnly
                 />
-                <p className='card-text-secondary'>total studets : {totalStudents}</p>
+                <p className='card-text-secondary'>price: {Price}$</p>
+                <p className='card-text-secondary'>avilable seats : {seats}</p>
+                <div className="card-actions justify-end">
+                    <button className="btn btn-primary w-full">add to cart</button>
+                </div>
             </div>
         </div>
     );

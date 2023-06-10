@@ -21,7 +21,7 @@
   @apply text-teal-500  text-2xl my-4 
 }
 .card-background{
-  @apply bg-gradient-to-r  from-pink-400 via-purple-500 to-blue-500   bg-opacity-20 shadow-xl shadow-white pb-8 rounded-xl
+  @apply bg-gradient-to-r  from-pink-400 via-purple-500 to-blue-500   bg-opacity-20 shadow-xl shadow-white pb-8 rounded-xl border-white border border-spacing-4
 }
 .footer{
   @apply bg-gradient-to-r from-pink-400 via-purple-500 to-blue-500  pb-4 shadow-xl shadow-white  rounded-xl

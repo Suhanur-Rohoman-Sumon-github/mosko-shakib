@@ -10,7 +10,7 @@ const Sinup = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-    const { handleSinup } = useContexts()
+    const { handleSinup,updateUserProfile } = useContexts()
     const navigat = useNavigate()
     
     const onSubmit = data => {
@@ -19,9 +19,10 @@ const Sinup = () => {
         handleSinup(email,password)
         .then(result=>{
             console.log(result.user)
+            updateUserProfile(name,photo)
             navigat('/')
         })
-        .catcj(err=>console.error(err))
+        .catch(err=>console.error(err))
     
     };
     return (
@@ -73,7 +74,7 @@ const Sinup = () => {
                                 </div>
 
                             </div>
-                            {errors.password?.type === 'required' && <p className="text-red-500">name is required</p>}
+                            {errors.password?.type === 'required' && <p className="text-red-500">password is required</p>}
                             {errors.password?.type === 'minLength' && <p className="text-red-500">password must be atlist 6 charectar</p>}
                             {errors.password?.type === 'maxLength' && <p className="text-red-500">Password is smaller then 20 charectar</p>}
                             {errors.password?.type === 'pattern' && <p className="text-red-500">password must be one uppercase one lower case one numbar and one special cherecter</p>}

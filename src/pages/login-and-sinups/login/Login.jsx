@@ -1,7 +1,26 @@
 import { Controls, Player } from "@lottiefiles/react-lottie-player";
 import { Link } from "react-router-dom";
-import { FaSignInAlt} from "react-icons/fa";
+import { FaSignInAlt, FaEyeSlash, FaEye } from "react-icons/fa";
+import { useForm } from "react-hook-form";
+import { useState } from "react";
+import useContexts from "../../../hook/useContexts";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const [showPassword, setShowPassword] = useState(false);
+    const navigat = useNavigate()
+    const {handleLogin} = useContexts()
+    const onSubmit = data =>{
+        console.log(data)
+        const {email,password} = data
+        handleLogin(email,password)
+        .then(result=>{
+            console.log(result.user)
+            navigat('/')
+        })
+        .catch(err=>console.error(err))
+    };
+    
     return (
         <div>
             <div className="hero min-h-screen card-background mb-16">
@@ -28,22 +47,37 @@ const Login = () => {
                         </Player>
                     </div>
                     <div data-aos="fade-right" className="card flex-shrink-0 w-full max-w-sm shadow-2xl  card-text-secondary border-white border border-spacing-4 shadow-white">
-                        <form className="card-body">
+                        <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="">Email</span>
                                 </label>
-                                <input type="text" placeholder="email" className="input input-bordered" />
+                                <input type="email" {...register("email",{ required: true })} placeholder="email" className="input input-bordered" />
+
                             </div>
+                            {errors.email?.type === 'required' && <p className="text-red-500">email is required</p>}
                             <div className="form-control">
                                 <label className="label">
                                     <span className="">Password</span>
                                 </label>
-                                <input type="text" placeholder="password" className="input input-bordered" />
-                                
+
+                                <div className="relative">
+                                    <input type={showPassword ? 'text' : 'password'} {...register("password",{ required: true }, {
+                                        required: true,
+                                    })} placeholder="password" className="input input-bordered  w-full" />
+                                    <button
+                                        type="button"
+                                        className="absolute top-1/2 right-2 transform -translate-y-1/2"
+                                        onClick={() => setShowPassword(!showPassword)}
+                                    >
+                                        {showPassword ? <FaEyeSlash /> : <FaEye />}
+                                    </button>
+                                </div>
+                                {errors.email?.type === 'required' && <p className="text-red-500">password is required</p>}
                             </div>
+                            
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login<FaSignInAlt/> </button>
+                                <button className="btn btn-primary">Login<FaSignInAlt /> </button>
                             </div>
                         </form>
                         <p className="mx-4">new there please <Link to={'/sinup'} ><button className="btn btn-link card-text-secondary">sinup</button></Link>   </p>

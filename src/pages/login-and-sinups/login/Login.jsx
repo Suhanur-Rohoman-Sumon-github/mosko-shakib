@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import useContexts from "../../../hook/useContexts";
 import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
+
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [showPassword, setShowPassword] = useState(false);
@@ -16,7 +18,9 @@ const Login = () => {
         handleLogin(email,password)
         .then(result=>{
             console.log(result.user)
+            Swal.fire('user login success full')
             navigat('/')
+           
         })
         .catch(err=>console.error(err))
     };

@@ -1,15 +1,21 @@
 import { Link } from "react-router-dom";
+import useContexts from "../../../hook/useContexts";
+
 
 
 const Navbar = () => {
+    const { user, handleLogout } = useContexts()
     const navItem = <>
         <li><Link to={'/'}>Home</Link></li>
         <li><Link to={'/contact'}>Instructors</Link></li>
         <li><Link to={'/menu'}>Classes</Link></li>
         <li><Link to={'/menu'}>Dashboard </Link></li>
     </>
+    const handaleLogouts = () => {
+        handleLogout()
+    }
     return (
-        <div className="navbar ">
+        <div className="navbar bg-black bg-opacity-25 w-7/12 lg:w-11/12 text-white fixed z-10 ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -28,8 +34,26 @@ const Navbar = () => {
                     {navItem}
                 </ul>
             </div>
-            <div className="navbar-end">
-               <Link to={'/login'}> <button className="btn-primary"> login</button></Link>
+            <div className="">
+                {!user && <Link to={'/login'}> <button className="btn-primary"> login</button></Link>}
+                {user &&
+                    <div className="dropdown ml-24 ">
+                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img src={user?.photoURL} />
+                            </div>
+                        </label>
+                        <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-sm dropdown-content  rounded-box w-52">
+                            <li>
+                                <a className="justify-between">
+                                    Profile
+                                    <span className="badge">New</span>
+                                </a>
+                            </li>
+                            <li><a>Settings</a></li>
+                            {user && <Link to={'/'}> <button onClick={handaleLogouts} className="btn-primary w-full"> logout</button></Link>}
+                        </ul>
+                    </div>}
             </div>
         </div>
     );

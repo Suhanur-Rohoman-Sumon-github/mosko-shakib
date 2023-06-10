@@ -23,7 +23,7 @@ const Banner = () => {
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper "
             >
-                <SwiperSlide className="h-screen py-24 card-background">
+                <SwiperSlide className="h-screen  py-44 card-background">
                     <div className=" md:flex items-center md:mt-32">
                         <div className="md:mx-auto md:w-[50%]">
                             <h1 className="mb-5 text-5xl font-bold text-primary">Master the Art of Batting</h1>
@@ -53,7 +53,7 @@ const Banner = () => {
                         </div>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide className="h-screen py-24 card-background">
+                <SwiperSlide className="h-screen py-44  card-background">
                     <div className=" md:flex items-center md:mt-32">
                         <div className="md:mx-auto md:w-[50%]">
                             <h1 className="mb-5 text-5xl font-bold text-primary">All-Round Excellence in Cricket Skills</h1>
@@ -83,7 +83,7 @@ const Banner = () => {
                         </div>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide className="h-screen py-24 card-background">
+                <SwiperSlide className="h-screen py-44  card-background">
                     <div className=" md:flex items-center  md:mt-32">
                         <div className="md:mx-auto md:w-[50%]">
                             <h1 className="mb-5 text-5xl font-bold text-primary">Become a Defensive Wall in Fielding</h1>
@@ -113,7 +113,7 @@ const Banner = () => {
                         </div>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide className="h-screen py-24 card-background">
+                <SwiperSlide className="h-screen py-44  card-background">
                     <div className=" md:flex items-center  md:mt-32">
                         <div className="md:mx-auto md:w-[50%]">
                             <h1 className="mb-5 text-5xl font-bold text-primary">Unleash Your Bowling Potential</h1>

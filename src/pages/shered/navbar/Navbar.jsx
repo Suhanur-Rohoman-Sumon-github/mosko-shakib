@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
-import { FaCartArrowDown } from "react-icons/fa";
+
 
 const Navbar = () => {
     const navItem = <>
         <li><Link to={'/'}>Home</Link></li>
-        <li><Link to={'/contact'}>CONTACT us</Link></li>
-        <li><Link to={'/menu'}>DASHBOARD</Link></li>
-        <li><Link to={'/menu'}>Our Menu</Link></li>
-        <li><Link to={'/shop'}>Our Shop</Link></li>
-        <li><Link to={'/shop'}> <FaCartArrowDown /> </Link></li>
+        <li><Link to={'/contact'}>Instructors</Link></li>
+        <li><Link to={'/menu'}>Classes</Link></li>
+        <li><Link to={'/menu'}>Dashboard </Link></li>
     </>
     return (
         <div className="navbar ">
@@ -21,7 +19,7 @@ const Navbar = () => {
                         {navItem}
                     </ul>
                 </div>
-                <Link >
+                <Link to={'/'}>
                     <img src="https://mascoshakibcricketacademy.com/app/uploads/2021/02/masco-shakib-cricket-academy.png" className="w-24 h-14" alt="" />
                 </Link>
             </div>

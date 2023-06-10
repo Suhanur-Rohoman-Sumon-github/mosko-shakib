@@ -1,5 +1,6 @@
 import { Controls, Player } from "@lottiefiles/react-lottie-player";
 import { Link } from "react-router-dom";
+import { FaSignInAlt} from "react-icons/fa";
 const Login = () => {
     return (
         <div>
@@ -42,7 +43,7 @@ const Login = () => {
                                 
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn btn-primary">Login<FaSignInAlt/> </button>
                             </div>
                         </form>
                         <p className="mx-4">new there please <Link to={'/sinup'} ><button className="btn btn-link card-text-secondary">sinup</button></Link>   </p>

@@ -2,7 +2,6 @@ import InstactorsCard from "./InstactorsCard";
 
 
 const InstarctorMap = ({ items }) => {
-    console.log(items)
     return (
         <div className="grid md:grid-cols-2 gap-8">
             {

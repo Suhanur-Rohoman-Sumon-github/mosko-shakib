@@ -29,6 +29,10 @@
 .footer-text{
   @apply text-teal-500 
 }
+.borders{
+  @apply border-white border border-spacing-4 shadow-white
+}
+
 
 
 

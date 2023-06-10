@@ -3,6 +3,8 @@ import Main from "../layout/Main";
 import Home from "../pages/home/home/Home";
 import Login from "../pages/login-and-sinups/login/Login";
 import Sinup from "../pages/login-and-sinups/sinup/Sinup";
+import Instractors from "../pages/instractors/Instractors";
+import Classes from "../pages/classes/Classes";
 
 const router = createBrowserRouter([
 {
@@ -20,6 +22,14 @@ const router = createBrowserRouter([
         {
             path:'/sinup',
             element:<Sinup />
+        },
+        {
+            path:'/instractor',
+            element:<Instractors />
+        },
+        {
+            path:'/classes',
+            element:<Classes />
         }
     ]
 }

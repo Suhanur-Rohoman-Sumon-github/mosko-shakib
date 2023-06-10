@@ -7,15 +7,15 @@ const Navbar = () => {
     const { user, handleLogout } = useContexts()
     const navItem = <>
         <li><Link to={'/'}>Home</Link></li>
-        <li><Link to={'/contact'}>Instructors</Link></li>
-        <li><Link to={'/menu'}>Classes</Link></li>
+        <li><Link to={'/instractor'}>Instructors</Link></li>
+        <li><Link to={'/classes'}>Classes</Link></li>
         <li><Link to={'/menu'}>Dashboard </Link></li>
     </>
     const handaleLogouts = () => {
         handleLogout()
     }
     return (
-        <div className="navbar bg-black bg-opacity-25 w-7/12 lg:w-11/12 text-white fixed z-10 ">
+        <div className="navbar  w-7/12 lg:w-11/12 text-white fixed z-10 ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

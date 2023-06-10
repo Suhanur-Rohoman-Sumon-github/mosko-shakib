@@ -4,15 +4,25 @@ import { useState } from 'react';
 import { Link } from "react-router-dom";
 import { FaSignInAlt, FaEyeSlash, FaEye } from "react-icons/fa";
 import useContexts from "../../../hook/useContexts";
+import { useNavigate } from "react-router-dom";
 
 const Sinup = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const { handleSinup } = useContexts()
-    console.log(handleSinup)
+    const navigat = useNavigate()
+    
     const onSubmit = data => {
         console.log(data)
-
+        const {name,email,password,photo} = data
+        handleSinup(email,password)
+        .then(result=>{
+            console.log(result.user)
+            navigat('/')
+        })
+        .catcj(err=>console.error(err))
+    
     };
     return (
         <div>
@@ -69,19 +79,19 @@ const Sinup = () => {
                             {errors.password?.type === 'pattern' && <p className="text-red-500">password must be one uppercase one lower case one numbar and one special cherecter</p>}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="">Password</span>
+                                    <span className="">confirm Password</span>
                                 </label>
                                 <div className="relative">
-                                    <input type="password"  {...register('confirm-password', {
+                                    <input type={showConfirmPassword ? 'text' : 'password'}  {...register('confirm-password', {
                                         required: true,
                                         validate: (value) => value === watch('password')
                                     })} placeholder="confirm-password" className="input input-bordered w-full" />
                                     <button
                                         type="button"
                                         className="absolute top-1/2 right-2 transform -translate-y-1/2"
-                                        onClick={() => setShowPassword(!showPassword)}
+                                        onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                                     >
-                                        {showPassword ? <FaEyeSlash /> : <FaEye />}
+                                        {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
                                     </button>
                                 </div>
                             </div>

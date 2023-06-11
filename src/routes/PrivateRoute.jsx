@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import useContexts from "../hook/useContexts";
 
 
 const PrivateRoute = ({children}) => {
+    const navigat = useNavigate()
     const {user,loading } = useContexts()
     if(loading){
         <progress className="progress w-56"></progress>

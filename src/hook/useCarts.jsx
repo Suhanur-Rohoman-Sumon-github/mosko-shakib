@@ -4,7 +4,7 @@ import useContexts from "./useContexts";
 
 const useCarts = () => {
     const {user} = useContexts()
-    const {data:carts,refech}=useQuery({
+    const {data:carts,refetch}=useQuery({
         queryKey:['carts',user?.emial],
         queryFn: async ()=>{
             const res = await fetch(`http://localhost:5000/carts?email=${user?.email}`)
@@ -12,7 +12,7 @@ const useCarts = () => {
         }
         
     })
-    return [carts,refech]
+    return [carts,refetch]
     
 };
 

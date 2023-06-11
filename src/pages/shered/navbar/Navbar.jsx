@@ -16,8 +16,8 @@ const Navbar = () => {
         <li><Link to={'/'}><FaHome />Home</Link></li>
         <li><Link to={'/instractor'}><FaUserTie />Instructors</Link></li>
         <li><Link to={'/classes'}><FaBookOpen />Classes</Link></li>
-        <li><Link to={'/dashbord'}><FaTasks />Dashboard </Link></li>
-        <li><Link to={'/dashbord/selected-class'}> < FaShoppingBag/> <div className="badge badge-secondary">{carts?carts.length :0}</div> </Link></li>
+       { user&& <li><Link to={'/dashbord'}><FaTasks />Dashboard </Link></li>}
+       {user&& <li><Link to={'/dashbord/selected-class'}> < FaShoppingBag/> <div className="badge badge-secondary">{carts?carts.length :0}</div> </Link></li>}
     </>
     const handaleLogouts = () => {
         handleLogout()
@@ -42,7 +42,7 @@ const Navbar = () => {
                     {navItem}
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="">
                 {!user && <Link to={'/login'}> <button className="btn-primary"> login</button></Link>}
                 {user &&
                     <div className="dropdown ">

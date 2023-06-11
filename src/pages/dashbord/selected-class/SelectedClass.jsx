@@ -1,15 +1,43 @@
+import Swal from "sweetalert2";
 import Title from "../../../componnet/title/Title";
 import useCarts from "../../../hook/useCarts";
 import { FaTrashAlt,FaCreditCard } from "react-icons/fa";
 
 const SelectedClass = () => {
-    const [carts] = useCarts()
+    const [carts,refech] = useCarts()
     if (!Array.isArray(carts)) {
         // Handle the case when data is still being fetched or is not an array
         return <div className='flex justify-center items-center mt-[30%]'><progress className="progress w-56"></progress>.</div>
     }
     const handleDelete = (id) =>{
-        console.log(id)
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/carts/${id}`,{
+                    method:'DELETE'
+                })
+                .then(res=>res.json())
+                .then(data=>{
+                    refech()
+                    console.log(data)
+                    if(data.deletedCount > 0){
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                          )
+                          
+                    }
+                })
+            }
+          })
     }
     return (
         <>

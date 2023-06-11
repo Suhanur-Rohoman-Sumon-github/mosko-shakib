@@ -3,10 +3,8 @@ import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import useContexts from '../../hook/useContexts';
 import Swal from 'sweetalert2';
-import useCarts from '../../hook/useCarts';
 
 const SingleMapData = ({ item }) => {
-    const [refech] = useCarts()
     const { name, description, image, rating, Price, seats } = item
     const {user} = useContexts()
     const handleAddtoCart = (item) =>{
@@ -27,7 +25,7 @@ const SingleMapData = ({ item }) => {
         })
         .then(res=>res.json())
         .then(data=>{
-            refech()
+           
             if(data.insertedId > 0){
                 Swal.fire({
                     position: 'top-end',

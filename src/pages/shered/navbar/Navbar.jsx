@@ -9,7 +9,7 @@ const Navbar = () => {
         <li><Link to={'/'}>Home</Link></li>
         <li><Link to={'/instractor'}>Instructors</Link></li>
         <li><Link to={'/classes'}>Classes</Link></li>
-        <li><Link to={'/menu'}>Dashboard </Link></li>
+        <li><Link to={'/dashbord'}>Dashboard </Link></li>
     </>
     const handaleLogouts = () => {
         handleLogout()

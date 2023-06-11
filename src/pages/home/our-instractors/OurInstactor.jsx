@@ -3,9 +3,10 @@ import Title from "../../../componnet/title/Title";
 import UseAOSInit from "../../../hook/UseAOSInit";
 import usePopularInstactor from "../../../hook/usepopularInstactor";
 import { FaArrowRight } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 const OurInstactor = () => {
-    <UseAOSInit />
+   <UseAOSInit />
+  
     const popularInstactor = usePopularInstactor()
     return (
        <div >
@@ -13,7 +14,7 @@ const OurInstactor = () => {
         <div  className="card-background py-24 px-4">
          <InstarctorMap   items={popularInstactor}></InstarctorMap>
          <div className="md:w-2/12 mx-auto"> 
-           <button className="btn btn-primary mt-8">view all instractors<FaArrowRight /> </button>
+           <Link to={'/instractor'}><button className="btn btn-primary mt-8">view all instractors<FaArrowRight /> </button></Link>
            </div>
         </div>
         

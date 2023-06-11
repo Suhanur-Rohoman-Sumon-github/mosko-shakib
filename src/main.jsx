@@ -9,7 +9,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <AuthProvider >
 
     <React.StrictMode>
-      <div className='main'>
+      <div className='main '>
         <RouterProvider router={router} />
       </div>
     </React.StrictMode>,

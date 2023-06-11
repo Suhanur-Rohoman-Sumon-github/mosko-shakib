@@ -1,15 +1,23 @@
 import { Link } from "react-router-dom";
 import useContexts from "../../../hook/useContexts";
+import { FaShoppingBag,FaHome,FaBookOpen,FaUserTie,FaTasks } from "react-icons/fa";
+import useCarts from "../../../hook/useCarts";
 
-
-
+// TODO:add navlink
 const Navbar = () => {
     const { user, handleLogout } = useContexts()
+    const [carts] = useCarts()
+    if (!Array.isArray(carts)) {
+        // Handle the case when data is still being fetched or is not an array
+        return <div className='flex justify-center items-center mt-[30%]'><progress className="progress w-56"></progress></div>
+    }
+   
     const navItem = <>
-        <li><Link to={'/'}>Home</Link></li>
-        <li><Link to={'/instractor'}>Instructors</Link></li>
-        <li><Link to={'/classes'}>Classes</Link></li>
-        <li><Link to={'/dashbord'}>Dashboard </Link></li>
+        <li><Link to={'/'}><FaHome />Home</Link></li>
+        <li><Link to={'/instractor'}><FaUserTie />Instructors</Link></li>
+        <li><Link to={'/classes'}><FaBookOpen />Classes</Link></li>
+        <li><Link to={'/dashbord'}><FaTasks />Dashboard </Link></li>
+        <li><Link to={'/dashbord/selected-class'}> < FaShoppingBag/> <div className="badge badge-secondary">{carts?carts.length :0}</div> </Link></li>
     </>
     const handaleLogouts = () => {
         handleLogout()
@@ -34,10 +42,10 @@ const Navbar = () => {
                     {navItem}
                 </ul>
             </div>
-            <div className="">
+            <div className="navbar-end">
                 {!user && <Link to={'/login'}> <button className="btn-primary"> login</button></Link>}
                 {user &&
-                    <div className="dropdown ml-24 ">
+                    <div className="dropdown ">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
                                 <img src={user?.photoURL} />

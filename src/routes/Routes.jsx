@@ -8,12 +8,14 @@ import Classes from "../pages/classes/Classes";
 import Dashboard from "../layout/Dashboard";
 import SelectedClass from "../pages/dashbord/selected-class/SelectedClass";
 import Payment from "../pages/dashbord/payment/Payment";
+import Error from "../pages/error/Error";
 
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Main />,
+        errorElement:<Error />,
         children: [
             {
                 path: '/',

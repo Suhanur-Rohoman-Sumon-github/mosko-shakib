@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { Link } from "react-router-dom";
-import { FaRegShareSquare, FaMeteor,FaHome,FaUserTie,FaBookOpen,FaTasks } from "react-icons/fa";
+import { FaRegShareSquare, FaMeteor,FaHome,FaUserTie,FaBookOpen } from "react-icons/fa";
 import useCarts from '../hook/useCarts';
 // TODO:add navlink
 const Dashboard = () => {

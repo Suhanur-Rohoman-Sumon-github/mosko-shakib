@@ -6,7 +6,8 @@ import Sinup from "../pages/login-and-sinups/sinup/Sinup";
 import Instractors from "../pages/instractors/Instractors";
 import Classes from "../pages/classes/Classes";
 import Dashboard from "../layout/Dashboard";
-import UserHome from "../pages/dashbord/userhome/UserHome";
+import SelectedClass from "../pages/dashbord/selected-class/SelectedClass";
+
 
 const router = createBrowserRouter([
     {
@@ -41,8 +42,8 @@ const router = createBrowserRouter([
         element: <Dashboard />,
         children:[
             {
-                path:'/dashbord/home',
-                element:<UserHome />
+                path:'/dashbord/selected-class',
+                element:<SelectedClass />
             }
         ]
     }

@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import Title from "../../../componnet/title/Title";
 import useCarts from "../../../hook/useCarts";
 import { FaTrashAlt,FaCreditCard } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const SelectedClass = () => {
     const [carts,refech] = useCarts()
@@ -77,7 +78,7 @@ const SelectedClass = () => {
                                     </td>
                                     <td>
                                     <button onClick={()=>handleDelete(cart._id)} className="btn btn-primary ">delete<FaTrashAlt />  </button>
-                                        <button className="btn btn-primary lg:ml-4">pay<FaCreditCard /> </button>
+                                       <Link to={'/dashbord/payment'}> <button className="btn btn-primary lg:ml-4">pay<FaCreditCard /> </button></Link>
                                     </td>
                                 </tr>)
                             }

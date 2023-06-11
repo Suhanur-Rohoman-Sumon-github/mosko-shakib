@@ -7,6 +7,7 @@ import Instractors from "../pages/instractors/Instractors";
 import Classes from "../pages/classes/Classes";
 import Dashboard from "../layout/Dashboard";
 import SelectedClass from "../pages/dashbord/selected-class/SelectedClass";
+import Payment from "../pages/dashbord/payment/Payment";
 
 
 const router = createBrowserRouter([
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
             {
                 path:'/dashbord/selected-class',
                 element:<SelectedClass />
+            },
+            {
+                path:'/dashbord/payment',
+                element:<Payment />
             }
         ]
     }

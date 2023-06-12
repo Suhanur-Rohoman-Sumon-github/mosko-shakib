@@ -5,6 +5,7 @@ import useCarts from '../hook/useCarts';
 const isinstractor = false
 const isadmin = true
 // TODO:add navlink
+// TODO:make google sin in user save in the database
 const Dashboard = () => {
     const [carts] = useCarts()
     return (
@@ -24,15 +25,15 @@ const Dashboard = () => {
                         <img src="https://mascoshakibcricketacademy.com/app/uploads/2021/02/masco-shakib-cricket-academy.png" className="w-full h-44" alt="" />
                     </Link>
                     {isadmin ? <>
-                        <h1 className='text-primary text-center'>admin home</h1>
+                        <h1 className='text-primary text-center'>Admin Dashboard</h1>
                         <li ><Link to={'/dashbord/manage-class'}><FaRegCalendarCheck /> Manage Classes </Link></li>
                         <li ><Link to={'/dashbord/manage-user'}><FaRegIdCard /> Manage Users</Link></li></> : isinstractor ? <>
 
-                            <h1 className='text-primary text-center'>instractor home</h1>
+                            <h1 className='text-primary text-center'>instractor Dashboard</h1>
                             <li ><Link to={'/dashbord/add-class'}><FaPenNib /> add a class</Link></li>
                             <li ><Link to={'/dashbord/my-classes'}><FaRegWindowMaximize /> My Classes</Link></li> </> :
                         <>
-                            <h1 className='text-primary text-center'>user home</h1>
+                            <h1 className='text-primary text-center'>user Dashboard</h1>
                             <li ><Link to={'/dashbord/selected-class'}><FaRegShareSquare /> My Selected Classes <div className="badge badge-secondary">{carts ? carts.length : 0}</div></Link></li>
                             <li ><Link to={'/dashbord/home'}><FaMeteor /> My Enrolled Classes</Link></li></>}
 

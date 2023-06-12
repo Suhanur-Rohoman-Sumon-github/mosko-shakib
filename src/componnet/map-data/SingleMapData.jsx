@@ -56,7 +56,7 @@ const SingleMapData = ({ item }) => {
             })
     }
     return (
-        <div className="card card-compact w-full shadow-white border border-white shadow-xl hover:shadow-green-500 bg-opacity-30 hover:bg-gradient-to-br from-pink-500 to-green-500 animate-gradient  transition duration-300">
+        <div className="card card-background card-compact w-full shadow-white border border-white shadow-xl hover:shadow-green-500 bg-opacity-30 hover:bg-gradient-to-br from-pink-500 to-green-500 animate-gradient  transition duration-300">
             <figure><img src={image} className='h-64 w-full' alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title card-text-primary">{name}</h2>

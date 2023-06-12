@@ -17,7 +17,7 @@ const useAxiosSequire = () => {
             const token = localStorage.getItem('access-token');
             console.log(token)
             if (token) {
-                config.headers.authorization = `Bearer ${token}`;
+                config.headers.Authorization = `Bearer ${token}`;
             }
 
             return config;
@@ -27,8 +27,8 @@ const useAxiosSequire = () => {
             (response) => response,
             async (error) => {
                 if (error.response && (error.response.status === 401 || error.response.status === 403)) {
-                    // await handleLogout();
-                    // navigate('/login');
+                    await handleLogout();
+                    navigate('/login');
                     console.log('error');
                 }
                 return Promise.reject(error);

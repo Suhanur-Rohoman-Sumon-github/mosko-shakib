@@ -4,7 +4,7 @@ const InstactorsCard = ({ item }) => {
     const {name,qualification,experience,specialization,achievements,image} = item
     return (
        
-         <div  className="card  w-full shadow-white border border-white shadow-xl hover:shadow-green-500 bg-opacity-30 hover:bg-gradient-to-br  from-red-500 via-black to-green-500 animate-gradient  transition duration-300">
+         <div  className="card card-background  w-full shadow-white border border-white shadow-xl hover:shadow-green-500 bg-opacity-30 hover:bg-gradient-to-br  from-red-500 via-black to-green-500 animate-gradient  transition duration-300">
             <figure><img src={image} className="w-full h-64 " alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title card-text-primary">{name}</h2>

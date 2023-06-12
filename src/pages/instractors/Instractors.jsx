@@ -46,7 +46,7 @@ const Instractors = () => {
                 </div>
                 <hr />
             </section>
-            <section data-aos="fade-up"  className="card-background my-8 pt-8">
+            <section data-aos="fade-up"  className=" my-8 pt-8">
                 <InstarctorMap items={instactors}></InstarctorMap>
             </section>
         </>

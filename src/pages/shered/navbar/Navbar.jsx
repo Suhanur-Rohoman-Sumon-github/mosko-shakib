@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import useContexts from "../../../hook/useContexts";
-import { FaShoppingBag,FaHome,FaBookOpen,FaUserTie,FaTasks } from "react-icons/fa";
+import { FaHome,FaBookOpen,FaUserTie,FaTasks } from "react-icons/fa";
 import useCarts from "../../../hook/useCarts";
 
 // TODO:add navlink
@@ -17,7 +17,6 @@ const Navbar = () => {
         <li><Link to={'/instractor'}><FaUserTie />Instructors</Link></li>
         <li><Link to={'/classes'}><FaBookOpen />Classes</Link></li>
        { user&& <li><Link to={'/dashbord'}><FaTasks />Dashboard </Link></li>}
-       {user&& <li><Link to={'/dashbord/selected-class'}> < FaShoppingBag/> <div className="badge badge-secondary">{carts?carts.length :0}</div> </Link></li>}
     </>
     const handaleLogouts = () => {
         handleLogout()

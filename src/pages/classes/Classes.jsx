@@ -36,7 +36,7 @@ const Classes = () => {
                     </div>
                 </div>
             </section>
-            <section className="card-background py-8 my-8">
+            <section className=" py-8 my-8">
                 <MapData items={classes}></MapData>
             </section>
         </div>

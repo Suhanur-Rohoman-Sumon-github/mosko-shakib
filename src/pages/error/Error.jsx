@@ -7,7 +7,7 @@ const Error = () => {
         <div className=''>
             <section className='flex items-center h-screen   text-gray-900'>
 
-                <div className='container flex flex-col items-center justify-center px-5 mx-auto '>
+                <div className='card-background p-8 flex flex-col items-center justify-center px-5 mx-auto '>
 
 
                     <div className='max-w-md text-center'>

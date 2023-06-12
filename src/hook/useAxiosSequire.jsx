@@ -26,7 +26,7 @@ const useAxiosSequire = () => {
         if (error.response && (error.response.status === 401 || error.response.status === 403)) {
           await handleLogout();
           navigate('/login');
-        console.log(error)
+        // console.log(error)
         }
         return Promise.reject(error);
       }
@@ -36,7 +36,7 @@ const useAxiosSequire = () => {
       axiosSecure.interceptors.request.eject(requestInterceptor);
       axiosSecure.interceptors.response.eject(responseInterceptor);
     };
-  }, [handleLogout, navigate]);
+  }, [handleLogout, navigate,axiosSecure.interceptors.request,axiosSecure.interceptors.response]);
 
   return axiosSecure;
 };

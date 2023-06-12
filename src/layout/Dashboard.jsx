@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaRegShareSquare, FaMeteor, FaHome, FaUserTie, FaBookOpen, FaPenNib, FaRegWindowMaximize, FaRegCalendarCheck, FaRegIdCard } from "react-icons/fa";
 import useCarts from '../hook/useCarts';
 const isinstractor = false
-const isadmin = true
+const isadmin = false
 // TODO:add navlink
 // TODO:make google sin in user save in the database
 const Dashboard = () => {

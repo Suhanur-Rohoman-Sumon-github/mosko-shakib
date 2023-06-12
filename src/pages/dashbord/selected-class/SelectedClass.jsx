@@ -21,6 +21,7 @@ const SelectedClass = () => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
+                 if (result.isConfirmed) {
                 fetch(`http://localhost:5000/carts/${id}`,{
                     method:'DELETE'
                 })
@@ -38,7 +39,7 @@ const SelectedClass = () => {
                     }
                 })
             }
-          })
+          }})
     }
     return (
         <>
@@ -78,7 +79,7 @@ const SelectedClass = () => {
                                     </td>
                                     <td>
                                     <button onClick={()=>handleDelete(cart._id)} className="btn btn-primary ">delete<FaTrashAlt />  </button>
-                                       <Link to={'/dashbord/payment'}> <button className="btn btn-primary lg:ml-4">pay<FaCreditCard /> </button></Link>
+                                       <Link to={`/dashbord/payment/${cart._id}`}> <button className="btn btn-primary lg:ml-4">pay<FaCreditCard /> </button></Link>
                                     </td>
                                 </tr>)
                             }

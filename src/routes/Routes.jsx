@@ -58,7 +58,7 @@ const router = createBrowserRouter([
                 element:<ErroledClass />
             },
             {
-                path:'/dashbord/payment',
+                path:'/dashbord/payment/:id',
                 element:<Payment />
             },
             {

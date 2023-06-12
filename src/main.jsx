@@ -1,4 +1,4 @@
-import React from 'react'
+
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { RouterProvider } from 'react-router-dom'
@@ -13,12 +13,11 @@ const queryClient = new QueryClient()
 ReactDOM.createRoot(document.getElementById('root')).render(
   <AuthProvider >
 
-    <React.StrictMode>
       <QueryClientProvider client={queryClient}>
         <div className='main '>
           <RouterProvider router={router} />
         </div>
       </QueryClientProvider>
-    </React.StrictMode>,
+    
   </AuthProvider>
 )

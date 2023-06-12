@@ -35,7 +35,7 @@ const Dashboard = () => {
                         <>
                             <h1 className='text-primary text-center'>user Dashboard</h1>
                             <li ><Link to={'/dashbord/selected-class'}><FaRegShareSquare /> My Selected Classes <div className="badge badge-secondary">{carts ? carts.length : 0}</div></Link></li>
-                            <li ><Link to={'/dashbord/home'}><FaMeteor /> My Enrolled Classes</Link></li></>}
+                            <li ><Link to={'/dashbord/errorled-class'}><FaMeteor /> My Enrolled Classes</Link></li></>}
 
                     <div className="divider">OR</div>
                     <li><Link to={'/'}><FaHome />Home</Link></li>

@@ -1,12 +1,22 @@
 
+import axios from "axios";
 import Title from "../../../../componnet/title/Title";
 import useInstractorsCartData from "../../../../hook/useInstractorsCartData";
 import { FaRegCheckCircle, FaRegWindowClose, FaRegCommentDots } from "react-icons/fa";
+import { useState } from "react";
 
 const ManageClass = () => {
     const [instractorClass, refetch] = useInstractorsCartData();
+    const [feedback, setFeedback] = useState('');
+    const handleTextareaChange = (event) => {
+        setFeedback(event.target.value);
+      };
     const handleFeedback = (id) => {
         console.log(id)
+        axios.post(`http://localhost:5000/feedback/${id}`, { feedbackData: feedback })
+        .then(data=>{
+            console.log(data.data)
+        })
     }
     const handleAprove = (id) => {
         fetch(`http://localhost:5000/instractor-class/aprove/${id}`, {
@@ -97,7 +107,7 @@ const ManageClass = () => {
                                                     ✕
                                                 </button>
                                                 <h3 className="card-text-primary">send feedback</h3>
-                                                <textarea className="textarea textarea-accent w-full h-full my-4 text-teal-500" placeholder="write feedback "></textarea>
+                                                <textarea value={feedback} onChange={handleTextareaChange} className="textarea textarea-accent w-full h-full my-4 text-teal-500" placeholder="write feedback "></textarea>
                                                 <button onClick={(()=>handleFeedback(classes._id))} className="btn btn-primary w-full mt-4">send</button>
                                             </form>
 

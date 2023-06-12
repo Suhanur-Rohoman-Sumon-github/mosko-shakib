@@ -1,13 +1,10 @@
-import { FaTrashAlt, FaUserCheck, FaUserAlt } from "react-icons/fa";
+import {  FaUserCheck, FaUserAlt } from "react-icons/fa";
 import Title from "../../../../componnet/title/Title";
 import useUser from "../../../../hook/useUser";
 
 
 const ManageUser = () => {
     const [users, refetch] = useUser()
-    const handleDelete = () => {
-
-    }
     const handleMakeInstractor = (id) => {
         fetch(`http://localhost:5000/users/instractors/${id}`,{
             method:'PATCH'
@@ -69,13 +66,7 @@ const ManageUser = () => {
                                             make instructor
                                             <FaUserCheck className="text-green-500" />
                                         </button>
-                                        <button
-                                            onClick={() => handleDelete(user._id)}
-                                            className="btn btn-primary"
-                                        >
-                                            delete
-                                            <FaTrashAlt className="text-red-500" />
-                                        </button>
+                                      
                                     </td>
                                 </tr>
                             ))}

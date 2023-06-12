@@ -1,15 +1,12 @@
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 
 const useInstractorsCartData = () => {
-    const [instractorClass, setInstractorClass] = useState([])
-    useEffect(() => {
-
-        fetch('http://localhost:5000/instractor-class')
-            .then(res => res.json())
-            .then(data => setInstractorClass(data))
-    }, [])
-    return [instractorClass]
+    const { data: instractorClass = [], refetch } = useQuery(['users'], async () => {
+        const res = await fetch('http://localhost:5000/instractor-class')
+        return res.json()
+    })
+    return [instractorClass,refetch]
 };
 
 export default useInstractorsCartData;

@@ -4,10 +4,32 @@ import useInstractorsCartData from "../../../../hook/useInstractorsCartData";
 import { FaRegCheckCircle, FaRegWindowClose, FaRegCommentDots } from "react-icons/fa";
 
 const ManageClass = () => {
-    const [instractorClass] = useInstractorsCartData();
-const handleFeedback = (id) =>{
-    console.log(id)
-}
+    const [instractorClass, refetch] = useInstractorsCartData();
+    const handleFeedback = (id) => {
+        console.log(id)
+    }
+    const handleAprove = (id) => {
+        fetch(`http://localhost:5000/instractor-class/aprove/${id}`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                refetch()
+                console.log(data)
+            })
+    }
+    const hanbdledeny = (id) => {
+        console.log(id)
+        fetch(`http://localhost:5000/instractor-class/deney/${id}`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                refetch()
+                console.log(data)
+            })
+    }
+
 
     return (
         <div>
@@ -50,11 +72,11 @@ const handleFeedback = (id) =>{
                                     <td>{classes.Price}</td>
                                     <td>{classes.status}</td>
                                     <td>
-                                        <button className="btn btn-primary">
+                                        <button onClick={() => handleAprove(classes._id)} className="btn btn-primary">
                                             <FaRegCheckCircle className="text-green-500" />
                                             Aprove
                                         </button>
-                                        <button className="btn btn-primary mt-2">
+                                        <button onClick={() => hanbdledeny(classes._id)} className="btn btn-primary mt-2">
                                             <FaRegWindowClose className="text-red-500" />
                                             Deny
                                         </button>
@@ -76,7 +98,7 @@ const handleFeedback = (id) =>{
                                                 </button>
                                                 <h3 className="card-text-primary">send feedback</h3>
                                                 <textarea className="textarea textarea-accent w-full h-full my-4 text-teal-500" placeholder="write feedback "></textarea>
-                                                <button onClick={((handleFeedback(classes._id)))} className="btn btn-primary w-full mt-4">send</button>
+                                                <button onClick={(()=>handleFeedback(classes._id))} className="btn btn-primary w-full mt-4">send</button>
                                             </form>
 
                                         </dialog>

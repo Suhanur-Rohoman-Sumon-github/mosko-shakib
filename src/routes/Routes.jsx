@@ -3,7 +3,6 @@ import Main from "../layout/Main";
 import Home from "../pages/home/home/Home";
 import Login from "../pages/login-and-sinups/login/Login";
 import Sinup from "../pages/login-and-sinups/sinup/Sinup";
-import Instractors from "../pages/instractors/Instractors";
 import Classes from "../pages/classes/Classes";
 import Dashboard from "../layout/Dashboard";
 import SelectedClass from "../pages/dashbord/selected-class/SelectedClass";
@@ -14,6 +13,7 @@ import ManageUser from "../pages/dashbord/admin/manage-user/ManageUser";
 import AddAclass from "../pages/dashbord/instractor/add-a-class/AddAclass";
 import MyClsees from "../pages/dashbord/instractor/my-classes/MyClsees";
 import ErroledClass from "../pages/dashbord/ErroledClass";
+import Instractors from "../pages/instractors/Instractors";
 
 
 const router = createBrowserRouter([

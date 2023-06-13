@@ -6,14 +6,12 @@ import { useState } from "react";
 
 const ManageClass = () => {
     const [instractorClass, refetch] = useInstractorsCartData();
-    console.log(instractorClass)
     const [feedback, setFeedback] = useState('');
     const handleTextareaChange = (event) => {
         setFeedback(event.target.value);
     };
     const handleFeedback = (id, event) => {
         event.preventDefault();
-        console.log(id)
         axios.post(`http://localhost:5000/feedback/${id}`, { feedbackData: feedback })
             .then(data => {
                 console.log(data.data)
@@ -26,7 +24,6 @@ const ManageClass = () => {
             .then(res => res.json())
             .then(data => {
                 refetch()
-                console.log(data)
             })
     }
     const hanbdledeny = (id) => {
@@ -37,7 +34,6 @@ const ManageClass = () => {
             .then(res => res.json())
             .then(data => {
                 refetch()
-                console.log(data)
             })
     }
 

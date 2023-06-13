@@ -52,7 +52,6 @@ const SingleMapData = ({ item }) => {
                         timer: 1500
                     })
                 }
-                console.log(data)
             })
     }
     return (

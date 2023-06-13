@@ -4,10 +4,12 @@ import { FaRegShareSquare, FaMeteor, FaHome, FaUserTie, FaBookOpen, FaPenNib, Fa
 import useCarts from '../hook/useCarts';
 import usePaymentsData from '../hook/usePaymentsData';
 import useAdmin from '../hook/useAdmin';
-const isinstractor = false
-
+import useInstractor from '../hook/useInstractor';
+import useLggedUser from '../hook/useLggedUser';
 const Dashboard = () => {
     const [isAdmin] = useAdmin()
+    const [isInstractor] =useInstractor()
+    const [isUser] = useLggedUser()
     const [carts] = useCarts()
     const [payments] = usePaymentsData()
     return (
@@ -26,18 +28,21 @@ const Dashboard = () => {
                     <Link to={'/'}>
                         <img src="https://mascoshakibcricketacademy.com/app/uploads/2021/02/masco-shakib-cricket-academy.png" className="w-full h-44" alt="" />
                     </Link>
-                    {isAdmin ? <>
+                    {isAdmin && <>
                         <h1 className='text-primary text-center'>Admin Dashboard</h1>
                         <li ><Link to={'/dashbord/manage-class'}><FaRegCalendarCheck /> Manage Classes </Link></li>
-                        <li ><Link to={'/dashbord/manage-user'}><FaRegIdCard /> Manage Users</Link></li></> : isinstractor ? <>
+                        <li ><Link to={'/dashbord/manage-user'}><FaRegIdCard /> Manage Users</Link></li></>}
+                    {isInstractor && <>
 
-                            <h1 className='text-primary text-center'>instractor Dashboard</h1>
-                            <li ><Link to={'/dashbord/add-class'}><FaPenNib /> add a class</Link></li>
-                            <li ><Link to={'/dashbord/my-classes'}><FaRegWindowMaximize /> My Classes</Link></li> </> :
-                        <>
-                            <h1 className='text-primary text-center'>user Dashboard</h1>
-                            <li ><Link to={'/dashbord/selected-class'}><FaRegShareSquare /> My Selected Classes<div className="badge badge-secondary">{carts ? carts.length : 0}</div></Link></li>
-                            <li ><Link to={'/dashbord/errorled-class'}><FaMeteor /> My Enrolled Classes<div className="badge badge-secondary">{payments ? payments.length : 0}</div> </Link></li></>}
+                        <h1 className='text-primary text-center'>instractor Dashboard</h1>
+                        <li ><Link to={'/dashbord/add-class'}><FaPenNib /> add a class</Link></li>
+                        <li ><Link to={'/dashbord/my-classes'}><FaRegWindowMaximize /> My Classes</Link></li> </>}
+                    {
+                        isUser && <>
+                        <h1 className='text-primary text-center'>user Dashboard</h1>
+                        <li ><Link to={'/dashbord/selected-class'}><FaRegShareSquare /> My Selected Classes<div className="badge badge-secondary">{carts ? carts.length : 0}</div></Link></li>
+                        <li ><Link to={'/dashbord/errorled-class'}><FaMeteor /> My Enrolled Classes<div className="badge badge-secondary">{payments ? payments.length : 0}</div> </Link></li></>
+                    }
 
                     <div className="divider">OR</div>
                     <li><Link to={'/'}><FaHome />Home</Link></li>

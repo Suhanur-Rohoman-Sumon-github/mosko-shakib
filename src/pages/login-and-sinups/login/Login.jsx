@@ -13,11 +13,9 @@ const Login = () => {
     const navigat = useNavigate()
     const {handleLogin,handleGoogleSinin} = useContexts()
     const onSubmit = data =>{
-        console.log(data)
         const {email,password} = data
         handleLogin(email,password)
         .then(result=>{
-            console.log(result.user)
             Swal.fire('user login success full')
             navigat('/')
            
@@ -27,7 +25,6 @@ const Login = () => {
     const handleGooglesinin = () =>{
         handleGoogleSinin()
         .then(result=>{
-            console.log(result.user)
             navigat('/')
         })
         .catch(err=>console.error(err))

@@ -45,7 +45,6 @@ const Chakout = ({ payment, cards }) => {
       setCardError(error.message);
     } else {
       setCardError('');
-      // console.log('payment method', paymentMethod);
     }
     setProcessing(true)
     const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(
@@ -60,10 +59,8 @@ const Chakout = ({ payment, cards }) => {
       }
     );
     if (confirmError) {
-      console.log(confirmError);
     }
     setProcessing(false)
-    console.log(paymentIntent);
     if (paymentIntent.status === 'succeeded') {
       const trasectionid = paymentIntent.id
       setTransectionid(trasectionid)
@@ -75,7 +72,6 @@ const Chakout = ({ payment, cards }) => {
       .then(res=>res.json())
       .then(data=>{
         refetch()
-        console.log(data)
       })
       const payment = {
         Price,
@@ -88,7 +84,7 @@ const Chakout = ({ payment, cards }) => {
       }
       axiosSecure.post('/payments', payment )
         .then(res => {
-          console.log(res.data) } )
+          } )
     }
   };
 

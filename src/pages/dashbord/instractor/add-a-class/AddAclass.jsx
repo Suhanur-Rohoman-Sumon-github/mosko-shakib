@@ -12,7 +12,6 @@ const AddAclass = () => {
         const {AvailableSeats,ClassImage,Price,className,instractotName,instractotEmail} = data
         axios.post('http://localhost:5000/instractor-class',{AvailableSeats,ClassImage,Price,className,instractotName,instractotEmail,status})
         .then(data=>{
-            console.log(data.data)
         })
     };
     return (

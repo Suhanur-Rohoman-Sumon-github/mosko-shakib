@@ -2,7 +2,7 @@ import Peralex from "../../peralex/Peralex";
 import AboutUs from "../about-us/AboutUs";
 import Banner from "../banner/Banner";
 import Gelary from "../gelary/Gelary";
-import OurInstactor from "../our-instractors/OurInstactor";
+// import OurInstactor from "../our-instractors/OurInstactor";
 import TopClasses from "../our-top-classes/TopClasses";
 
 const Home = () => {
@@ -12,7 +12,7 @@ const Home = () => {
             <AboutUs />
             <Peralex />
             <TopClasses />
-            <OurInstactor />
+            {/* <OurInstactor /> */}
             <Gelary />
         </div>
     );

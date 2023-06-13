@@ -28,7 +28,6 @@ const SelectedClass = () => {
                 .then(res=>res.json())
                 .then(data=>{
                     refech()
-                    console.log(data)
                     if(data.deletedCount > 0){
                         Swal.fire(
                             'Deleted!',

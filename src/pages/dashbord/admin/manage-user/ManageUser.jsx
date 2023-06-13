@@ -12,7 +12,6 @@ const ManageUser = () => {
         .then(res=>res.json())
         .then(data=>{
             refetch()
-            console.log(data)
         })
     }
     const handleMakeAdmin = (id) => {
@@ -23,7 +22,6 @@ const ManageUser = () => {
         .then(res=>res.json())
         .then(data=>{
             refetch()
-            console.log(data)
         })
     }
     return (

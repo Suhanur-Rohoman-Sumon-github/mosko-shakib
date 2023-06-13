@@ -26,7 +26,6 @@ const useAxiosSequire = () => {
         if (error.response && (error.response.status === 401 || error.response.status === 403)) {
           await handleLogout();
           navigate('/login');
-        // console.log(error)
         }
         return Promise.reject(error);
       }

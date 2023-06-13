@@ -4,6 +4,7 @@ import axios from "axios";
 import useContexts from "../../../hook/useContexts";
 import useAxiosSequire from "../../../hook/useAxiosSequire";
 import useCarts from "../../../hook/useCarts";
+import useInstractorsCartData from "../../../hook/useInstractorsCartData";
 
 const Chakout = ({ payment, cards }) => {
   const { user } = useContexts()
@@ -11,6 +12,7 @@ const Chakout = ({ payment, cards }) => {
   const elements = useElements();
   const axiosSecure = useAxiosSequire()
   const [refetch] = useCarts()
+  const [instractorClass] = useInstractorsCartData()
   const [cardError, setCardError] = useState('');
   const [clientSecret, setClientSecret] = useState('');
   const [isPaymaentIntent, setIsPaymentIntent] = useState(false)
@@ -59,20 +61,35 @@ const Chakout = ({ payment, cards }) => {
       }
     );
     if (confirmError) {
+      setCardError(confirmError)
     }
     setProcessing(false)
+
     if (paymentIntent.status === 'succeeded') {
       const trasectionid = paymentIntent.id
       setTransectionid(trasectionid)
-      const { Price, email, image, name, _id } = cards
+
+      const classId = instractorClass._id
+        fetch(`http://localhost:5000//instractor-class/avilable/${classId}`, {
+          method: 'PATCH'
+        })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data)
+            refetch()
+          })
+      
+
       const id = cards._id
       fetch(`http://localhost:5000/carts/pyment/${id}`, {
         method: 'DELETE'
       })
-      .then(res=>res.json())
-      .then(data=>{
-        refetch()
-      })
+        .then(res => res.json())
+        .then(data => {
+          console.lgo(data)
+          refetch()
+        })
+      const { Price, email, image, name, _id } = cards
       const payment = {
         Price,
         email,
@@ -80,11 +97,12 @@ const Chakout = ({ payment, cards }) => {
         name,
         trasectionid,
         id: _id,
-        date:new Date().toLocaleDateString()
+        date: new Date().toLocaleDateString()
       }
-      axiosSecure.post('/payments', payment )
+      axiosSecure.post('/payments', payment)
         .then(res => {
-          } )
+          console.log(res)
+        })
     }
   };
 

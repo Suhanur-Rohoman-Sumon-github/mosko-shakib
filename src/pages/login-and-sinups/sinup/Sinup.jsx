@@ -19,9 +19,11 @@ const Sinup = () => {
 
         handleSinup(email, password)
             .then(result => {
+                console.log(result.user)
                 updateUserProfile(name, photo)
                 axios.post('http://localhost:5000/users', { email, name, rules: 'user',photo })
                 .then(data => {
+                    console.log(data.data)
                 })
                 navigat('/')
 
@@ -32,6 +34,7 @@ const Sinup = () => {
     const handleGooglesinin = () => {
         handleGoogleSinin()
             .then(result => {
+                console.log(result.user)
                 navigat('/')
             })
             .catch(err => console.error(err))

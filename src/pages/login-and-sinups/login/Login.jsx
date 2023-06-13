@@ -16,6 +16,7 @@ const Login = () => {
         const {email,password} = data
         handleLogin(email,password)
         .then(result=>{
+            console.log(result.user)
             Swal.fire('user login success full')
             navigat('/')
            
@@ -25,6 +26,7 @@ const Login = () => {
     const handleGooglesinin = () =>{
         handleGoogleSinin()
         .then(result=>{
+            console.log(result.user)
             navigat('/')
         })
         .catch(err=>console.error(err))

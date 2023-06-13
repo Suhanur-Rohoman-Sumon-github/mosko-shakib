@@ -6,12 +6,17 @@ import axios from "axios";
 
 const AddAclass = () => {
     const { user } = useContexts()
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors },reset  } = useForm();
     const status = 'pending'
+    const erroledStudent = 0
     const onSubmit = data =>{
+        reset();
         const {AvailableSeats,ClassImage,Price,className,instractotName,instractotEmail} = data
-        axios.post('http://localhost:5000/instractor-class',{AvailableSeats,ClassImage,Price,className,instractotName,instractotEmail,status})
+        const seats = parseInt(AvailableSeats, 10);
+        axios.post('http://localhost:5000/instractor-class',{AvailableSeats:seats,ClassImage,Price,className,instractotName,instractotEmail,status,erroledStudent})
+        
         .then(data=>{
+            
         })
     };
     return (

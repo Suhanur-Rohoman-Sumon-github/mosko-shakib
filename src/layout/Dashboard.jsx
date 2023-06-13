@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { FaRegShareSquare, FaMeteor, FaHome, FaUserTie, FaBookOpen, FaPenNib, FaRegWindowMaximize, FaRegCalendarCheck, FaRegIdCard } from "react-icons/fa";
 import useCarts from '../hook/useCarts';
 import usePaymentsData from '../hook/usePaymentsData';
+import useAdmin from '../hook/useAdmin';
 const isinstractor = false
-const isadmin = false
-// TODO:add navlink
-// TODO:make google sin in user save in the database
+
 const Dashboard = () => {
+    const [isAdmin] = useAdmin()
     const [carts] = useCarts()
     const [payments] = usePaymentsData()
     return (
@@ -26,7 +26,7 @@ const Dashboard = () => {
                     <Link to={'/'}>
                         <img src="https://mascoshakibcricketacademy.com/app/uploads/2021/02/masco-shakib-cricket-academy.png" className="w-full h-44" alt="" />
                     </Link>
-                    {isadmin ? <>
+                    {isAdmin ? <>
                         <h1 className='text-primary text-center'>Admin Dashboard</h1>
                         <li ><Link to={'/dashbord/manage-class'}><FaRegCalendarCheck /> Manage Classes </Link></li>
                         <li ><Link to={'/dashbord/manage-user'}><FaRegIdCard /> Manage Users</Link></li></> : isinstractor ? <>

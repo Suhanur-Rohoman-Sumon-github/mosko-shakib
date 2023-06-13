@@ -4,7 +4,7 @@ import usePaymentsData from "../../hook/usePaymentsData";
 
 
 const ErroledClass = () => {
-    const [payments,isLoading] = usePaymentsData()
+    const [payments] = usePaymentsData()
     console.log(payments)
    
     return (

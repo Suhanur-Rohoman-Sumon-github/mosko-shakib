@@ -6,7 +6,8 @@ import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 
 const SingleMapData = ({ item }) => {
-    const { name, description, image, rating, Price, seats } = item
+
+    const {  description, className,ClassImage,instractotName,instractotEmail, rating, Price, AvailableSeats } = item
     const navigat = useNavigate()
     const { user } = useContexts()
     const handleAddtoCart = (item) => {
@@ -56,17 +57,19 @@ const SingleMapData = ({ item }) => {
     }
     return (
         <div className="card card-background card-compact w-full shadow-white border border-white shadow-xl hover:shadow-green-500 bg-opacity-30 hover:bg-gradient-to-br from-pink-500 to-green-500 animate-gradient  transition duration-300">
-            <figure><img src={image} className='h-64 w-full' alt="Shoes" /></figure>
+            <figure><img src={ClassImage} className='h-64 w-full' alt="Shoes" /></figure>
             <div className="card-body">
-                <h2 className="card-title card-text-primary">{name}</h2>
+                <h2 className="card-title card-text-primary">{className}</h2>
                 <p className='card-text-secondary'>{description}</p>
                 <Rating
                     style={{ maxWidth: 120 }}
                     value={rating}
                     readOnly
                 />
+                <p className='card-text-secondary'>instractor name : {instractotName}</p>
+                <p className='card-text-secondary'>instractor email : {instractotEmail}</p>
                 <p className='card-text-secondary'>price: {Price}$</p>
-                <p className='card-text-secondary'>avilable seats : {seats}</p>
+                <p className='card-text-secondary'>avilable seats : {AvailableSeats}</p>
                 <div className="card-actions justify-end">
                     <button onClick={() => handleAddtoCart(item)} className="btn btn-primary w-full">add to cart</button>
                 </div>

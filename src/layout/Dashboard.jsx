@@ -7,6 +7,7 @@ import useAdmin from '../hook/useAdmin';
 import useInstractor from '../hook/useInstractor';
 import useLggedUser from '../hook/useLggedUser';
 const Dashboard = () => {
+    
     const [isAdmin] = useAdmin()
     const [isInstractor] =useInstractor()
     const [isUser] = useLggedUser()

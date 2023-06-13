@@ -5,22 +5,20 @@ import InsreactorCardes from "./InsreactorCardes";
 
 const Instractors = () => {
     const [instractors, setInstractors] = useState()
-    // const instactors = useInstactor()
-    // const instractors = useInstorFilterData()
     const user = useManageUser()
     useEffect(() => {
         const instractor = user.filter(user => user.rules === 'instractor');
-        
+
         // Only update instractors if the user array has changed
         if (JSON.stringify(instractors) !== JSON.stringify(instractor)) {
             setInstractors(instractor);
         }
-    }, [user,instractors]);
+    }, [user, instractors]);
     if (!instractors) {
         // Add a loading state or return an error message if instractors is undefined
         return <div>Loading...</div>;
-      }
-    
+    }
+
     return (
         <>
             <section className=" pt-20 h-screen">
@@ -64,12 +62,12 @@ const Instractors = () => {
                 <hr />
             </section>
             <section data-aos="fade-up" className=" my-8 pt-8">
-            <div  className="grid md:grid-cols-3 gap-8">
-                           {
-                instractors.map(item =><InsreactorCardes key={item._id}
-                    item={item}
-                ></InsreactorCardes> )
-            }        </div>
+                <div className="grid md:grid-cols-3 gap-8">
+                    {
+                        instractors.map(item => <InsreactorCardes key={item._id}
+                            item={item}
+                        ></InsreactorCardes>)
+                    }        </div>
             </section>
         </>
     );

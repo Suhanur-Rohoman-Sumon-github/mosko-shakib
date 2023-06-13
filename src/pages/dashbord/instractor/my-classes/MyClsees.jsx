@@ -8,7 +8,6 @@ const MyClsees = () => {
         
         return <div className="w-4/12 mx-auto mt-72"><span className="loading loading-spinner loading-lg  mx-auto"></span></div>;
       }
-    //   TODO : make update when click this 
     const handleUpdateClass = (id) => {
         console.log(id)
     }

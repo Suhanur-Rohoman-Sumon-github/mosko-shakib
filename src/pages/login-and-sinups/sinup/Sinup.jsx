@@ -6,7 +6,7 @@ import { FaSignInAlt, FaEyeSlash, FaEye } from "react-icons/fa";
 import useContexts from "../../../hook/useContexts";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-// TODO add react helmet or use titel
+
 const Sinup = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [showPassword, setShowPassword] = useState(false);

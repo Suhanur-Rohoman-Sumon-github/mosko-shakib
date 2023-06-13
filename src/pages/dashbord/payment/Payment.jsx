@@ -14,17 +14,21 @@ const Payment = () => {
     const [dataLoaded, setDataLoaded] = useState(false); 
     const [isRequestMade, setIsRequestMade] = useState(false);
     const [cards,setCards] = useState()
+    
     const [carts] = useCarts();
+    console.log(carts)
 
     useEffect(() => {
         if (!isRequestMade && carts) {
             const item = carts.find(cart => cart._id === id);
             setCards(item)
+            console.log(item)
             if (item) {
                 setPayment(item.Price); 
                 setDataLoaded(true);
                 setIsRequestMade(true)
             }
+           
         }
     }, [carts,id,isRequestMade]);
     if (!dataLoaded) {

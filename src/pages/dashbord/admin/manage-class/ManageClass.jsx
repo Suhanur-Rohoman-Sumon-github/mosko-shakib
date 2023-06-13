@@ -3,8 +3,10 @@ import Title from "../../../../componnet/title/Title";
 import useInstractorsCartData from "../../../../hook/useInstractorsCartData";
 import { FaRegCheckCircle, FaRegWindowClose, FaRegCommentDots } from "react-icons/fa";
 import { useState } from "react";
+import useChangeTitle from "../../../../hook/useChangeTitle";
 
 const ManageClass = () => {
+    useChangeTitle('mosko shakib | admin home')
     const [instractorClass, refetch] = useInstractorsCartData();
     const [feedback, setFeedback] = useState('');
     const handleTextareaChange = (event) => {
@@ -23,6 +25,7 @@ const ManageClass = () => {
         })
             .then(res => res.json())
             .then(data => {
+                console.log(data)
                 refetch()
             })
     }
@@ -33,6 +36,7 @@ const ManageClass = () => {
         })
             .then(res => res.json())
             .then(data => {
+                console.log(data)
                 refetch()
             })
     }

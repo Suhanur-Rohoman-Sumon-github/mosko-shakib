@@ -3,7 +3,6 @@ import useContexts from "../../../hook/useContexts";
 import { FaHome,FaBookOpen,FaUserTie,FaTasks } from "react-icons/fa";
 import useCarts from "../../../hook/useCarts";
 
-// TODO:add navlink
 const Navbar = () => {
     const { user, handleLogout } = useContexts()
     const [carts] = useCarts()

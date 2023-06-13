@@ -2,9 +2,11 @@ import { useForm } from "react-hook-form";
 import Title from "../../../../componnet/title/Title";
 import useContexts from "../../../../hook/useContexts";
 import axios from "axios";
+import useChangeTitle from "../../../../hook/useChangeTitle";
 
 
 const AddAclass = () => {
+    useChangeTitle('mosko shakib | instractor')
     const { user } = useContexts()
     const { register, handleSubmit, formState: { errors },reset  } = useForm();
     const status = 'pending'

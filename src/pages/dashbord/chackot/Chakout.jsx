@@ -3,16 +3,13 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import useContexts from "../../../hook/useContexts";
 import useAxiosSequire from "../../../hook/useAxiosSequire";
-import useCarts from "../../../hook/useCarts";
-import useInstractorsCartData from "../../../hook/useInstractorsCartData";
 
 const Chakout = ({ payment, cards }) => {
+  console.log(payment)
   const { user } = useContexts()
   const stripe = useStripe();
   const elements = useElements();
   const axiosSecure = useAxiosSequire()
-  const [refetch] = useCarts()
-  const [instractorClass] = useInstractorsCartData()
   const [cardError, setCardError] = useState('');
   const [clientSecret, setClientSecret] = useState('');
   const [isPaymaentIntent, setIsPaymentIntent] = useState(false)
@@ -69,16 +66,8 @@ const Chakout = ({ payment, cards }) => {
       const trasectionid = paymentIntent.id
       setTransectionid(trasectionid)
 
-      const classId = instractorClass._id
-        fetch(`http://localhost:5000//instractor-class/avilable/${classId}`, {
-          method: 'PATCH'
-        })
-          .then(res => res.json())
-          .then(data => {
-            console.log(data)
-            refetch()
-          })
-      
+
+
 
       const id = cards._id
       fetch(`http://localhost:5000/carts/pyment/${id}`, {
@@ -86,8 +75,8 @@ const Chakout = ({ payment, cards }) => {
       })
         .then(res => res.json())
         .then(data => {
-          console.lgo(data)
-          refetch()
+          console.log(data)
+          // refetch()
         })
       const { Price, email, image, name, _id } = cards
       const payment = {
@@ -101,9 +90,44 @@ const Chakout = ({ payment, cards }) => {
       }
       axiosSecure.post('/payments', payment)
         .then(res => {
-          console.log(res)
+          console.log(res.data)
+        })
+        console.log(name)
+        
+        fetch(`http://localhost:5000/instractor-class/available/${cardPrice}`, {
+          method: 'PATCH',
+        })
+          .then((res) => {
+            if (!res.ok) {
+              throw new Error('Failed to update instructor class availability');
+            }
+            return res.json();
+          })
+          .then((data) => {
+            console.log(data);
+            // refetch();
+          })
+          .catch((error) => {
+            console.error(error);
+        })
+        fetch(`http://localhost:5000/instractor-class/total/${cardPrice}`, {
+          method: 'PATCH',
+        })
+          .then((res) => {
+            if (!res.ok) {
+              throw new Error('Failed to update instructor class availability');
+            }
+            return res.json();
+          })
+          .then((data) => {
+            console.log(data);
+            // refetch();
+          })
+          .catch((error) => {
+            console.error(error);
         })
     }
+
   };
 
   return (

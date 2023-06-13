@@ -1,9 +1,13 @@
 
 import { Controls, Player } from "@lottiefiles/react-lottie-player";
-import useClasses from "../../hook/useClasses";
 import MapData from "../../componnet/map-data/MapData";
+import useInstractorsCartData from "../../hook/useInstractorsCartData";
 const Classes = () => {
-    const classes = useClasses()
+    // const classes = useClasses()
+    const [instractorClass] =useInstractorsCartData()
+    if(!instractorClass){
+        return  <div className="w-4/12 mx-auto mt-72"><span className="loading loading-spinner loading-lg  mx-auto"></span></div>;
+    }
     return (
         <div>
             <section className=" pt-20 h-screen">
@@ -37,7 +41,7 @@ const Classes = () => {
                 </div>
             </section>
             <section className=" py-8 my-8">
-                <MapData items={classes}></MapData>
+                <MapData items={instractorClass}></MapData>
             </section>
         </div>
     );

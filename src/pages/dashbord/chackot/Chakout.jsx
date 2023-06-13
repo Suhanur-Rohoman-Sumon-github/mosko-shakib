@@ -83,9 +83,10 @@ const Chakout = ({ payment, cards }) => {
         image,
         name,
         trasectionid,
-        id: _id
+        id: _id,
+        date:new Date().toLocaleDateString()
       }
-      axiosSecure.post('/payments', { payment })
+      axiosSecure.post('/payments', payment )
         .then(res => {
           console.log(res.data) } )
     }

@@ -2,12 +2,14 @@ import { Outlet } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import { FaRegShareSquare, FaMeteor, FaHome, FaUserTie, FaBookOpen, FaPenNib, FaRegWindowMaximize, FaRegCalendarCheck, FaRegIdCard } from "react-icons/fa";
 import useCarts from '../hook/useCarts';
+import usePaymentsData from '../hook/usePaymentsData';
 const isinstractor = false
 const isadmin = false
 // TODO:add navlink
 // TODO:make google sin in user save in the database
 const Dashboard = () => {
     const [carts] = useCarts()
+    const [payments] = usePaymentsData()
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -34,8 +36,8 @@ const Dashboard = () => {
                             <li ><Link to={'/dashbord/my-classes'}><FaRegWindowMaximize /> My Classes</Link></li> </> :
                         <>
                             <h1 className='text-primary text-center'>user Dashboard</h1>
-                            <li ><Link to={'/dashbord/selected-class'}><FaRegShareSquare /> My Selected Classes <div className="badge badge-secondary">{carts ? carts.length : 0}</div></Link></li>
-                            <li ><Link to={'/dashbord/errorled-class'}><FaMeteor /> My Enrolled Classes</Link></li></>}
+                            <li ><Link to={'/dashbord/selected-class'}><FaRegShareSquare /> My Selected Classes<div className="badge badge-secondary">{carts ? carts.length : 0}</div></Link></li>
+                            <li ><Link to={'/dashbord/errorled-class'}><FaMeteor /> My Enrolled Classes<div className="badge badge-secondary">{payments ? payments.length : 0}</div> </Link></li></>}
 
                     <div className="divider">OR</div>
                     <li><Link to={'/'}><FaHome />Home</Link></li>
